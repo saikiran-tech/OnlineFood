@@ -1,0 +1,15 @@
+#python
+__pycache__/
+*.__pycache__
+env/
+venv
+
+#django
+staticfiles/
+media/
+
+#Environment variables
+.env
+
+#vscode
+.vscode/
