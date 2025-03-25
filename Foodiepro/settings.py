@@ -21,11 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
-
+SECRET_KEY = 'django-insecure-n#&2e)6mk%yvwmtssw6w9-2^yx@wee*z#y5g@3w%o!a8-lw@4m'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
-
+DEBUG = True
 ALLOWED_HOSTS = []
 
 
@@ -78,14 +76,16 @@ WSGI_APPLICATION = 'Foodiepro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('HOST', default='localhost'),
-        'PORT': config('PORT', default=25, cast=int),
+        'NAME': 'Foodiepro_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Kiran@84',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
+
+AUTH_USER_MODEL = 'foodapp.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -125,8 +125,21 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
+
 ]
+
+#media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.INFO: "",
+    50: "critical",
+}
