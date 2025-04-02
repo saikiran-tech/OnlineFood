@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'foodapp'
+    'foodapp',
+    'vendor'
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 from django.contrib.messages import constants as messages
 
 MESSAGE_TAGS = {
-    messages.INFO: "",
-    50: "critical",
+    messages.ERROR: 'danger',
+
 }
+
+#Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # For Gmail, change for other services
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'skiranr.tech@gmail.com'
+EMAIL_HOST_PASSWORD = 'kera cunk ivhc opri'
+DEFAULT_FROM_EMAIL = 'OnlineFood <skiranr.tech@gmail.com>'
