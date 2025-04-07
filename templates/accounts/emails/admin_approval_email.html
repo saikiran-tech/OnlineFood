@@ -1,0 +1,10 @@
+{% autoescape off %}
+
+Hi {{user.first_name }},
+{% if is_approved %}
+Congrats! Your restaurent has been approved. --Food Online
+{% esle %}
+Sorry! Your restaurent is not eligible for listing. For details please contact support@foodOnline.com.
+{% endif %}
+
+{% endautoescape %}

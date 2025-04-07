@@ -1,5 +1,6 @@
 from django.db import models
 from foodapp.models import User, UserProfile
+from foodapp.utils import send_notification_mail
 # Create your models here.
 
 class Vendor(models.Model):
@@ -13,3 +14,24 @@ class Vendor(models.Model):
 
     def __str__(self):
         return self.vendor_name
+    
+    def save(self, *args, **kwargs):
+        if self.pk is not None:
+            #update
+            original = Vendor.objects.get(pk=self.pk)
+            if original.is_approved != self.is_approved:
+                email_template = 'accounts/emails/admin_approval_email.html'
+                context = {
+                        'user': self.user,
+                        'is_appoved': self.is_approved
+                    }
+                if original.is_approved == True:
+                    mail_subject = "Congrats! Your restaurent has been approved."
+                    
+                    send_notification_mail(mail_subject, email_template, context) #send notification to user
+
+                else:
+                    mail_subject = "Sorry! Your restaurent is not eligible for listing."
+                    send_notification_mail(mail_subject, email_template, context)
+
+        return super(Vendor, self).save(*args, **kwargs)

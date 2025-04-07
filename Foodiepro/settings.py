@@ -63,6 +63,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'foodapp.context_processors.get_vendor',
+                'foodapp.context_processors.get_google_api',
             ],
         },
     },
@@ -153,3 +155,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'skiranr.tech@gmail.com'
 EMAIL_HOST_PASSWORD = 'kera cunk ivhc opri'
 DEFAULT_FROM_EMAIL = 'OnlineFood <skiranr.tech@gmail.com>'
+
+GOOGLE_API_KEY = 'AIzaSyA8pARQDcEXrKkMh4QV8k7l0goqAeZU0qk'
