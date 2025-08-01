@@ -22,3 +22,9 @@
     font: size 12px;
     cursor: pointer;
 }
+
+.btn btn-secondary {
+    padding:1rem;
+    border-radius: 1rem;
+
+}

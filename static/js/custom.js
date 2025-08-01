@@ -40,12 +40,10 @@ function onPlaceChanged (){
 
             $('#id_address').val(address);
         }
-    }
-    )
-};
+    });
 
 //loop through address components
-console.log(place.address_components);
+
     for (var i=0; i<place.address_components.length; i++){
         for (var j=0; j<place.address_components[i].types.length; j++){
             //get country
@@ -69,3 +67,4 @@ console.log(place.address_components);
 
         }
     }
+};

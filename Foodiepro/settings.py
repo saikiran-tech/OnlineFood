@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n#&2e)6mk%yvwmtssw6w9-2^yx@wee*z#y5g@3w%o!a8-lw@4m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["54.172.149.8", "127.0.0.1"]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'foodapp',
     'vendor',
     'menu',
+    'marketplace',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'foodapp.context_processors.get_vendor',
                 'foodapp.context_processors.get_google_api',
+                'marketplace.context_processors.get_cart_counter',
             ],
         },
     },
@@ -85,7 +87,7 @@ DATABASES = {
         'PASSWORD': 'Kiran@84',
         'HOST': 'localhost',
         'PORT': '5432'
-    }
+}
 }
 
 
