@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'Foodiepro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'FoodOnline_db',
-        'USER': 'POSTGRES',
+        'NAME': 'Foodiepro_db',
+        'USER': 'postgres',
         'PASSWORD': 'Kiran@84',
         'HOST': 'localhost',
         'PORT': '5432'
