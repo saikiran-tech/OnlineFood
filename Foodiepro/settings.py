@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n#&2e)6mk%yvwmtssw6w9-2^yx@wee*z#y5g@3w%o!a8-lw@4m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ["54.172.149.8", "127.0.0.1"]
+ALLOWED_HOSTS = ["44.203.67.54", "127.0.0.1"]
 
 
 # Application definition
@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'Foodiepro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Foodiepro_db',
-        'USER': 'postgres',
+        'NAME': 'FoodOnline_db',
+        'USER': 'POSTGRES',
         'PASSWORD': 'Kiran@84',
         'HOST': 'localhost',
         'PORT': '5432'
