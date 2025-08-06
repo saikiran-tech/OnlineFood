@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-n#&2e)6mk%yvwmtssw6w9-2^yx@wee*z#y5g@3w%o!a8-lw@4m
 DEBUG = True
 ALLOWED_HOSTS = ["52.90.189.104", "127.0.0.1", "localhost"]
 
+#AWS credentials
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+
 
 # Application definition
 
@@ -40,6 +44,7 @@ INSTALLED_APPS = [
     'vendor',
     'menu',
     'marketplace',
+    'storages'
 ]
 
 MIDDLEWARE = [
