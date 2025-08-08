@@ -48,8 +48,8 @@ else:
     }
 
     # Use custom backends
-    STATICFILES_STORAGE = 'Foodiepro.storage_backends.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'Foodiepro.storage_backends.MediaStorage'
+    STATICFILES_STORAGE = 'storage_backends.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'storage_backends.MediaStorage'
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
@@ -155,23 +155,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
-# STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,'static')
-
-# ]
-
-#media files
-# MEDIA_URL = '/media/'
-# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
-# MEDIA_ROOT = os.path.join(BASE_DIR,'media')
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
