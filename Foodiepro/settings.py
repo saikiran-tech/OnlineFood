@@ -48,8 +48,8 @@ else:
     }
 
     # Use custom backends
-    STATICFILES_STORAGE = 'storage_backends.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'storage_backends.MediaStorage'
+    STATICFILES_STORAGE = 'Foodiepro.storage_backends.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'Foodiepro.storage_backends.MediaStorage'
 
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
